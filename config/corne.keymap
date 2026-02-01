@@ -68,7 +68,7 @@
             display-name = "L3";
             bindings = <
 &trans  &kp N1  &kp N2  &kp N3  &kp N4          &kp N5          &kp N6    &kp N7    &kp N8        &kp N9         &kp LG(K_POWER)  &kp LG(PRINTSCREEN)
-&trans  &none   &none   &none   &msc SCRL_DOWN  &msc SCRL_UP    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT      &none            &none
+&trans  &none   &none   &none   &msc SCRL_DOWN  &msc SCRL_UP    &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT      &kp LC(LS(V))    &none
 &trans  &none   &none   &none   &none           &none           &kp HOME  &kp END   &kp PAGE_UP   &kp PAGE_DOWN  &none            &none
                         &trans  &trans          &trans          &trans    &trans    &trans
             >;
