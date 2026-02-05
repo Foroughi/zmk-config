@@ -94,10 +94,10 @@
 
             display-name = "L3";
             bindings = <
-&none  &fht N1 F1        &fht N2 F2  &fht N3 F3           &fht N4 F4     &fht N5 F5     &kp HOME  &kp PAGE_UP    &msc SCRL_DOWN  &none      &kp C_VOLUME_UP    &none
-&none  &fht NUMBER_6 F6  &fht N7 F7  &fht N8 F8           &fht N9 F9     &fht N0 F10    &kp LEFT  &kp DOWN       &kp UP_ARROW    &kp RIGHT  &kp K_MUTE         &none
-&none  &none             &none       &fht K_PREVIOUS F11  &fht K_PP F12  &kp K_NEXT     &kp END   &kp PAGE_DOWN  &msc SCRL_DOWN  &none      &kp C_VOLUME_DOWN  &none
-                                     &trans               &trans         &trans         &trans    &trans         &trans
+&none  &fht F1 NUMBER_1  &fht F2 NUMBER_2  &fht F3 NUMBER_3     &fht F4 NUMBER_4       &fht F5 N5     &kp HOME  &kp PAGE_UP    &msc SCRL_DOWN  &none      &kp C_VOLUME_UP    &none
+&none  &fht F6 NUMBER_6  &fht F7 N7        &fht F8 N8           &fht F9 N9             &fht F10 N0    &kp LEFT  &kp DOWN       &kp UP_ARROW    &kp RIGHT  &kp K_MUTE         &none
+&none  &none             &none             &fht F11 K_PREVIOUS  &fht F12 K_PLAY_PAUSE  &kp K_NEXT     &kp END   &kp PAGE_DOWN  &msc SCRL_DOWN  &none      &kp C_VOLUME_DOWN  &none
+                                           &trans               &trans                 &trans         &trans    &trans         &trans
             >;
 
             label = "L2";
