@@ -19,7 +19,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <50>;
             flavor = "hold-preferred";
-            hold-trigger-key-positions = <38>;
+            hold-while-undecided;
         };
 
         htl: htl {
@@ -28,9 +28,9 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <39>;
             tapping-term-ms = <200>;
             quick-tap-ms = <50>;
+            hold-while-undecided;
         };
 
         fht: fht {
@@ -42,7 +42,7 @@
             tapping-term-ms = <250>;
             quick-tap-ms = <100>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <1 2 3 4 5 13 14 15 16 17 27 28>;
+            hold-while-undecided;
         };
     };
 
