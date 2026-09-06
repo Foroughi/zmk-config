@@ -11,18 +11,6 @@
 
 / {
     behaviors {
-        ht: ht {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Hold Or Tap";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <50>;
-            flavor = "hold-preferred";
-            hold-while-undecided;
-        };
-
         htl: htl {
             compatible = "zmk,behavior-hold-tap";
             label = "Hold Tab Switch Later";
@@ -34,16 +22,32 @@
             hold-while-undecided;
         };
 
-        fht: fht {
+        valheim_dodge: valheim_dodge {
             compatible = "zmk,behavior-hold-tap";
-            label = "FHT";
-            bindings = <&kp>, <&kp>;
+            label = "VALHEIM_DODGE";
+            bindings = <&kp>, <&valheim_dodge_macro>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <50>;
-            flavor = "tap-preferred";
-            hold-while-undecided;
+            tapping-term-ms = <250>;
+            hold-trigger-key-positions = <13 14 15 2>;
+        };
+    };
+
+    macros {
+        valheim_dodge_macro: valheim_dodge {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_wait_time 30>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>,
+                <&kp LCTRL &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+
+            label = "VALHEIM_DODGE";
         };
     };
 
@@ -61,7 +65,7 @@
             bindings = <
 &kp ESCAPE  &kp Q  &kp W  &kp E             &kp R     &kp T           &kp Y         &kp U  &kp I       &kp O      &kp P          &kp BACKSPACE
 &kp TAB     &kp A  &kp S  &kp D             &kp F     &kp G           &kp H         &kp J  &kp K       &kp L      &kp SEMICOLON  &kp SPACE
-&kp LSHIFT  &kp Z  &kp X  &kp C             &kp V     &kp B           &kp N         &kp M  &kp PERIOD  &kp COMMA  &mo 4          &kp RSHIFT
+&kp LSHIFT  &kp Z  &kp X  &kp C             &kp V     &kp B           &kp N         &kp M  &kp PERIOD  &kp COMMA  &none          &kp RSHIFT
                           &kp LEFT_CONTROL  &kp LCMD  &kp LEFT_ALT    &htl 1 ENTER  &mo 2  &mo 3
             >;
 
@@ -95,7 +99,7 @@
 
             display-name = "L3";
             bindings = <
-&none  &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp HOME  &kp PAGE_UP    &msc SCRL_DOWN  &none      &none  &none
+&none  &kp NUMBER_1      &kp NUMBER_2       &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp HOME  &kp PAGE_UP    &msc SCRL_DOWN  &none      &none  &to 5
 &none  &kp NUMBER_6      &kp NUMBER_7       &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0    &kp LEFT  &kp DOWN       &kp UP_ARROW    &kp RIGHT  &none  &none
 &none  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp GRAVE     &kp COLON     &kp DOT         &kp END   &kp PAGE_DOWN  &msc SCRL_DOWN  &none      &none  &none
                                             &trans        &trans        &trans          &trans    &trans         &trans
@@ -124,6 +128,15 @@
             >;
 
             label = "L4";
+        };
+
+        Valheim {
+            bindings = <
+&kp ESCAPE  &kp Q               &valheim_dodge W W  &kp NUMBER_1        &kp NUMBER_2   &kp NUMBER_3    &trans  &trans  &trans  &trans  &trans  &to 0
+&kp TAB     &valheim_dodge A A  &valheim_dodge S S  &valheim_dodge D D  &kp E          &kp F           &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &kp Z               &kp X               &kp C               &kp NUMBER_6   &kp NUMBER_7    &trans  &trans  &trans  &trans  &trans  &kp NUMBER_8
+                                                    &kp LEFT_SHIFT      &kp LC(SPACE)  &kp SPACE       &trans  &trans  &trans
+            >;
         };
     };
 
