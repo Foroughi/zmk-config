@@ -30,23 +30,21 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
         };
     };
 
     macros {
         valheim_dodge_macro: valheim_dodge {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_wait_time 1>,
                 <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp SPACE>,
                 <&macro_release>,
-                <&kp LCTRL &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+                <&kp LCTRL>;
 
             label = "VALHEIM_DODGE";
         };
