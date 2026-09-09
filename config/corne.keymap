@@ -30,6 +30,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-while-undecided;
+            quick-tap-ms = <50>;
         };
     };
 
@@ -40,7 +41,7 @@
             bindings =
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_wait_time 30>,
+                <&macro_wait_time 1>,
                 <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp SPACE>,
