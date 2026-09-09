@@ -21,33 +21,6 @@
             quick-tap-ms = <50>;
             hold-while-undecided;
         };
-
-        valheim_dodge: valheim_dodge {
-            compatible = "zmk,behavior-hold-tap";
-            label = "VALHEIM_DODGE";
-            bindings = <&kp>, <&valheim_dodge_macro>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred";
-        };
-    };
-
-    macros {
-        valheim_dodge_macro: valheim_dodge {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp SPACE>,
-                <&macro_release>,
-                <&kp LCTRL>;
-
-            label = "VALHEIM_DODGE";
-        };
     };
 
     keymap {
@@ -131,10 +104,10 @@
 
         Valheim {
             bindings = <
-&kp ESCAPE  &kp Q               &valheim_dodge W W  &kp NUMBER_1        &kp NUMBER_2   &kp NUMBER_3    &trans  &trans  &trans  &trans  &trans  &to 0
-&kp TAB     &valheim_dodge A A  &valheim_dodge S S  &valheim_dodge D D  &kp E          &kp F           &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL   &kp Z               &kp X               &kp C               &kp NUMBER_6   &kp NUMBER_7    &trans  &trans  &trans  &trans  &trans  &kp NUMBER_8
-                                                    &kp LEFT_SHIFT      &kp LC(SPACE)  &kp SPACE       &trans  &trans  &trans
+&kp ESCAPE  &kp Q  &kp W  &kp NUMBER_1    &kp NUMBER_2   &kp NUMBER_3    &trans  &trans  &trans  &trans  &trans  &to 0
+&kp TAB     &kp A  &kp S  &kp D           &kp E          &kp F           &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL   &kp Z  &kp X  &kp C           &kp NUMBER_6   &kp NUMBER_7    &trans  &trans  &trans  &trans  &trans  &kp NUMBER_8
+                          &kp LEFT_SHIFT  &kp LC(SPACE)  &kp SPACE       &trans  &trans  &trans
             >;
         };
     };
